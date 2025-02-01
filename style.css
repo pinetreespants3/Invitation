@@ -1,0 +1,105 @@
+body {
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#envelope {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+#opened-envelope {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#letter-container {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 20;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    display: none;
+}
+
+#letter-container.visible {
+    display: block;
+}
+
+#letter {
+    width: 400px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+}
+
+#background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 10;
+}
+
+#background-overlay.letter-visible {
+    display: block;
+}
+
+#birds-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bird {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 1;
+    transition: transform 0.1s ease-in-out;
+}
+
+#caw,
+#bark {
+    position: absolute;
+    display: none;
+    z-index: 10;
+    width: 80px;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+}
+
+#caw {
+    top: 50%;
+}
+
+#bark {
+    top: 50%;
+}
+
+#background-overlay {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#background-overlay.letter-visible {
+    opacity: 1;
+}
